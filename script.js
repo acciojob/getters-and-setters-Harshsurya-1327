@@ -9,7 +9,7 @@ class Person {
     return this._age;
   }
 
-  set setAge(newAge) {
+  set age(newAge) {
     this._age = newAge;
   }
 }
@@ -30,7 +30,7 @@ class Teacher extends Person {
 const person = new Person("John", 25);
 console.log(person.name);
 
-person.setAge = 30;  // Using the setter to change the age
+person.age = 30;  // Using the setter to change the age
 console.log(person.age);  // Output: 30
 
 const student = new Student("Alice", 22);
