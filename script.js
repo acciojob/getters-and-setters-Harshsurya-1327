@@ -49,4 +49,3 @@ teacher1.teach();
 window.Person = Person;
 window.Student = Student;
 window.Teacher=Teacher;
-window.Teacher=Teacher;
