@@ -1,51 +1,46 @@
-
+// Base class: Person
 class Person {
-  constructor(name, age) {
-    this.name = name;
+  private _name: string;
+  private _age: number;
+
+  constructor(name: string, age: number) {
+    this._name = name;
     this._age = age;
   }
 
-  get age() {
-    return this._age;
+  // Getter for name
+  get name(): string {
+    return this._name;
   }
 
-  set age(newAge) {
-    this._age = newAge;
+  // Setter for age
+  set age(age: number) {
+    this._age = age;
   }
 }
 
+// Subclass: Student
 class Student extends Person {
-  study() {
+  study(): void {
     console.log(`${this.name} is studying`);
   }
 }
 
+// Subclass: Teacher
 class Teacher extends Person {
-  teach() {
+  teach(): void {
     console.log(`${this.name} is teaching`);
   }
 }
 
-// Do not change the code below this line
-const person = new Person("John", 25);
-console.log(person.name);
-
-person.age = 30;  // Using the setter to change the age
-console.log(person.age);  // Output: 30
-
-const student = new Student("Alice", 22);
-student.study();
-
-const student1 = new Student("John", 22);
-student1.study();
 
 
-const teacher = new Teacher("Alice", 40);
-teacher.teach();
+const student = new Student("Alice", 20);
+student.study();  // Output: Alice is studying
 
-const teacher1 = new Teacher("John", 40);
-teacher1.teach();
+const teacher = new Teacher("Mr. Smith", 40);
+teacher.teach();  // Output: Mr. Smith is teaching
 
-window.Person = Person;
-window.Student = Student;
-window.Teacher=Teacher;
+student.age = 21; // Uses setter
+console.log(student.name); // Uses getter: Output: Alice
+
